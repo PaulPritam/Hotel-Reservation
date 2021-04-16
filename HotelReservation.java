@@ -1,10 +1,4 @@
-package com.hotelreservation;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-
-public class HotelReservation {
+{
 
     public static void main(String[] args) throws ParseException {
         int weekendCounter =0;
@@ -38,7 +32,7 @@ public class HotelReservation {
             Scanner inputdate = new Scanner(System.in);
             String date = inputdate.next();
             String month = inputdate.next();
-            String year = "2021";
+            String year = inputdate.next();
             String inputDateStr = String.format("%s/%s/%s", date,month,year);
             Date inputDate = new SimpleDateFormat("dd/MM/yyyy").parse(inputDateStr);
             Calendar calendar = Calendar.getInstance();
@@ -48,28 +42,13 @@ public class HotelReservation {
 
             if (dayOfWeek.equals("SATURDAY") || dayOfWeek.equals("SUNDAY"))
             {
-                weekendCounter++;
+                System.out.println(lakewoodHotel.getHotelName());
             }
             else
             {
-                weekdayCounter++;
+                System.out.println(bridgewoodHotel.getHotelName());
             }
         }
-        calculateLakewood = (weekdayCounter*lakewoodHotel.regularWeekdayRates) + (weekendCounter*lakewoodHotel.getRegularWeekendRates());
-        calculateBridgewood = (weekdayCounter*bridgewoodHotel.regularWeekdayRates) + (weekendCounter*bridgewoodHotel.getRegularWeekendRates());
-        calculateRidgewood = (weekdayCounter*ridgewoodHotel.regularWeekdayRates) + (weekendCounter*ridgewoodHotel.getRegularWeekendRates());
 
-        if (calculateLakewood < calculateBridgewood && calculateLakewood <calculateRidgewood)
-        {
-            System.out.println("The cheapest hotel for you is " +lakewoodHotel.getHotelName() +" Price $" +calculateLakewood);
-        }
-        else if (calculateBridgewood < calculateLakewood && calculateBridgewood < calculateRidgewood)
-        {
-            System.out.println("The cheapest hotel for you is " +bridgewoodHotel.getHotelName() +" Price $" +calculateBridgewood);
-        }
-        else
-        {
-            System.out.println("The cheapest hotel for you is " +ridgewoodHotel.getHotelName() +" Price $" +calculateRidgewood);
-        }
     }
 }
