@@ -51,12 +51,41 @@ public class HotelReservation {
 
             if (dayOfWeek.equals("SATURDAY") || dayOfWeek.equals("SUNDAY"))
             {
-                System.out.println(lakewoodHotel.getHotelName());
+                weekendCounter++;
             }
             else
             {
-                System.out.println(bridgewoodHotel.getHotelName());
+                weekdayCounter++;
             }
+        }
+        calculateLakewood = (weekdayCounter*lakewoodHotel.regularWeekdayRates) + (weekendCounter*lakewoodHotel.getRegularWeekendRates());
+        calculateBridgewood = (weekdayCounter*bridgewoodHotel.regularWeekdayRates) + (weekendCounter*bridgewoodHotel.getRegularWeekendRates());
+        calculateRidgewood = (weekdayCounter*ridgewoodHotel.regularWeekdayRates) + (weekendCounter*ridgewoodHotel.getRegularWeekendRates());
+
+        if (calculateLakewood < calculateBridgewood && calculateLakewood <calculateRidgewood)
+        {
+            System.out.println("The cheapest hotel for you is " +lakewoodHotel.getHotelName() +" Total Rates $" +calculateLakewood);
+        }
+        else if (calculateBridgewood < calculateLakewood && calculateBridgewood < calculateRidgewood)
+        {
+            System.out.println("The cheapest hotel for you is " +bridgewoodHotel.getHotelName() +" Total Rates $" +calculateBridgewood);
+        }
+        else
+        {
+            System.out.println("The cheapest hotel for you is " +ridgewoodHotel.getHotelName() +" Total Rates $" +calculateRidgewood);
+        }
+
+        if (lakewoodHotel.getHotelRatings() > bridgewoodHotel.getHotelRatings() && lakewoodHotel.getHotelRatings() > ridgewoodHotel.getHotelRatings())
+        {
+            System.out.println("Best rated hotel is " +lakewoodHotel.getHotelName() +" Total Rates $" +calculateLakewood);
+        }
+        else if (bridgewoodHotel.getHotelRatings() > lakewoodHotel.getHotelRatings() && bridgewoodHotel.getHotelRatings() > ridgewoodHotel.getHotelRatings())
+        {
+            System.out.println("Best rated hotel is " +bridgewoodHotel.getHotelName() +" Total Rates $" +calculateBridgewood);
+        }
+        else
+        {
+            System.out.println("Best rated hotel is " +ridgewoodHotel.getHotelName() +" Total Rates $" +calculateRidgewood);
         }
     }
 }
