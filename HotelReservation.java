@@ -1,4 +1,10 @@
-{
+package com.hotelreservation;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+public class HotelReservation {
 
     public static void main(String[] args) throws ParseException {
         int weekendCounter =0;
@@ -11,16 +17,19 @@
         lakewoodHotel.setHotelName("Lakewood");
         lakewoodHotel.setRegularWeekdayRates(110);
         lakewoodHotel.setRegularWeekendRates(90);
+        lakewoodHotel.setHotelRatings(3);
 
         Hotels bridgewoodHotel = new Hotels();
         bridgewoodHotel.setHotelName("Bridgewood");
         bridgewoodHotel.setRegularWeekdayRates(160);
         bridgewoodHotel.setRegularWeekendRates(60);
+        bridgewoodHotel.setHotelRatings(4);
 
         Hotels ridgewoodHotel = new Hotels();
         ridgewoodHotel.setHotelName("Ridgewood");
         ridgewoodHotel.setRegularWeekdayRates(220);
         ridgewoodHotel.setRegularWeekendRates(150);
+        ridgewoodHotel.setHotelRatings(5);
 
         System.out.println("Welcome to Hotel Reservation Program ");
         System.out.println("Enter the number of days you want to stay ");
@@ -49,6 +58,5 @@
                 System.out.println(bridgewoodHotel.getHotelName());
             }
         }
-
     }
 }
