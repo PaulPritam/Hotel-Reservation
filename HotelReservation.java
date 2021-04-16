@@ -28,7 +28,7 @@ public class HotelReservation {
         ridgewoodHotel.setRegularWeekdayRates(220);
         ridgewoodHotel.setRegularWeekendRates(150);
 
-        System.out.println("welcome to Hotel Reservation Program ");      
+        System.out.println("Welcome to Hotel Reservation Program ");
         System.out.println("Enter the number of days you want to stay ");
         Scanner inputDays = new Scanner(System.in);
         int numberOfDays = inputDays.nextInt();
@@ -61,15 +61,15 @@ public class HotelReservation {
 
         if (calculateLakewood < calculateBridgewood && calculateLakewood <calculateRidgewood)
         {
-            System.out.println("The cheapest hotel for you is " +lakewoodHotel.getHotelName() +" Price " +calculateLakewood);
+            System.out.println("The cheapest hotel for you is " +lakewoodHotel.getHotelName() +" Price $" +calculateLakewood);
         }
         else if (calculateBridgewood < calculateLakewood && calculateBridgewood < calculateRidgewood)
         {
-            System.out.println("The cheapest hotel for you is " +bridgewoodHotel.getHotelName() +" Price " +calculateBridgewood);
+            System.out.println("The cheapest hotel for you is " +bridgewoodHotel.getHotelName() +" Price $" +calculateBridgewood);
         }
         else
         {
-            System.out.println("The cheapest hotel for you is " +ridgewoodHotel.getHotelName() +" Price " +calculateRidgewood);
+            System.out.println("The cheapest hotel for you is " +ridgewoodHotel.getHotelName() +" Price $" +calculateRidgewood);
         }
     }
 }
